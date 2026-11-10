@@ -6,8 +6,8 @@ Trained on a laptop CPU in about 20 minutes.
 
 ## Training text
 
-*Indian Fairy Tales* by Joseph Jacobs (1892), Project Gutenberg ebook #7128, which is in the
-public domain. `python data/prepare.py` downloads it and strips the Gutenberg header and
+*Indian Fairy Tales* by Joseph Jacobs (1892), Project Gutenberg ebook #7128
+(https://www.gutenberg.org/ebooks/7128), which is in the public domain. `python data/prepare.py` downloads it and strips the Gutenberg header and
 licence footer (395,000 characters). The text file itself is not committed.
 
 ## Run
@@ -17,11 +17,12 @@ pip install torch                      # the CPU build is enough
 python data/prepare.py
 python train.py --steps 1500           # saves out/ckpt.pt every 250 steps
 python train.py --steps 2000 --resume  # carries on from the checkpoint
-python train.py --sample "Once upon a time" --temperature 0.8 --top_p 0.9
+python generate.py "Once upon a time" --temperature 0.8 --top_p 0.9
 python -m unittest discover -s tests
 ```
 
-Model files (`out/`) are not committed; `results/` has the logs and samples.
+Model files (`out/`, `*.pt`) are not committed. `train_log.txt` is the loss log, and
+`results/` has the same log as JSON plus the samples.
 
 ## Model
 
@@ -49,7 +50,7 @@ Model files (`out/`) are not committed; `results/` has the logs and samples.
 - Every evaluation saves `out/ckpt.pt` with the model, the optimiser state, the step, the
   config and the vocabulary. `--resume` loads all of it and continues from that step.
 
-`results/train_log.txt` (the second run resumed at step 1500):
+`train_log.txt` (the second run resumed at step 1500):
 
 ```
 step 0:    train 4.794  val 4.794

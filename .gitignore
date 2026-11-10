@@ -1,3 +1,4 @@
 out/
+*.pt
 data/input.txt
 __pycache__/

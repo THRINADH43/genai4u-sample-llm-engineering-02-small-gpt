@@ -1,0 +1,13 @@
+834,560 parameters, vocab 97
+step 0: train 4.794  val 4.794  (8s)
+step 250: train 2.479  val 2.891  (180s)
+step 500: train 2.388  val 2.802  (291s)
+step 750: train 2.281  val 2.707  (415s)
+step 1000: train 2.123  val 2.592  (568s)
+step 1250: train 1.989  val 2.478  (688s)
+step 1500: train 1.906  val 2.413
+resumed from step 1500
+834,560 parameters, vocab 97
+step 1500: train 1.897  val 2.402  (5s)
+step 1750: train 1.825  val 2.355  (124s)
+step 2000: train 1.745  val 2.279
